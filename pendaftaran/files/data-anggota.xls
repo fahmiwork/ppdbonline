@@ -1,0 +1,74 @@
+<html>
+<head>
+
+  <title>Cetak PDF</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .table {
+      border-collapse:collapse;
+      table-layout:fixed;width: 630px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .table th {
+      padding: 5px;
+    }
+    .image{
+      width: 65px;
+      height: 70px;
+      text-align: center;
+      margin-right: 10px;
+      
+    }
+    .txtc {
+      text-align: center;
+    }
+    .ttd {
+      text-align: right;
+    }
+    .table td {
+      word-wrap:break-word;
+      table-layout: center;
+      padding: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .margin{
+      margin-bottom: 5px;
+    }
+    .table-tr {
+      background-color: blue;
+      word-wrap:break-word;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+   
+
+    
+
+  <!-- <img src="./sekolah/files/logo_sekolah.png" class="image" style="float: left;"> -->
+  <h2 style="text-align: center;">Hasil Seleksi Yang Dinyatakan Diterima</h2>
+
+  
+  <hr>
+  <table class="table" border="1" width="100%" style="margin-top: 10px;">
+    <tr>
+    <th class="txtc">No</th>
+    <th class="txtc">Tanggal Pendaftaran</th>
+    <th class="txtc">No. Pendaftaran</th>
+    <th class="txtc">Nama Peserta</th>
+    <th class="txtc">Jenis Kelamin</th>
+    <th class="txtc">Asal Sekolah</th>
+    </tr>
+    <tr><td class='txtc'>1</td><td class='txtc'>31-07-2023</td><td class='txtc'>2</td><td>23</td><td class='txtc'>laki</td><td class='txtc'>SD Japri 1</td></tr><tr><td class='txtc'>2</td><td class='txtc'>31-07-2023</td><td class='txtc'>NP23</td><td>Fahmi Fathurrohman </td><td class='txtc'>Laki-laki</td><td class='txtc'>sdmmsd</td></tr>  </table><br>
+  <b>Keterangan :</b> Periode Tanggal 31-07-2023 s/d 31-07-2023  <br>
+  <br>
+  <p class="ttd">Mengetahui, kepala sekolah</p>
+  <br>
+  <br>
+  <br>
+  <p class="ttd">(........................................)</p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+
+
+<?php
+
+include '../database/koneksi.php';
+
+
+
+$lokasi_file = $_FILES['nama_dokumen']['tmp_name'];
+$nama_dokumen   = $_FILES['nama_dokumen']['name'];
+// Tentukan folder untuk menyimpan file
+$folder = "files/$nama_dokumen";
+// tanggal sekarang
+
+
+
+
+// Apabila file berhasil di upload
+if (move_uploaded_file($lokasi_file,"$folder")){
+  echo "Nama File : <b>$nama_dokumen</b> sukses di upload";
+  
+  // Masukkan informasi file ke database
+$koneksi = mysqli_connect("localhost","root", "", "ppdb");
+$query =  mysqli_query($koneksi, "insert into tb_pendaftar (no_pendaftar, nik, 
+nama_lengkap, jenis_kelamin, ttl,  agama, alamat_rumah, tempat_tinggal, 
+mode_transportasi, nama_ayah, nam_ibu, no_telp, no_kps, tahun_lahir_ayah, 
+tahun_lahir_ibu, pendidikan_ayah, pendidikan_ibu, pekerjaan_ayah, 
+pekerjaan_ibu, penghasilan_ayah, penghasilan_ibu, keterangan_ayah, 
+keterangan_ibu, tinggi_berat_badan, jarak_tempuh, waktu_tempuh, anak_ke, 
+jumlah_total_saudara, jumlah_adik,
+jumlah_kakak,  nama_dokumen, username, password, status_pendaftaran, tgl) 
+values ('{$_POST['no_pendaftar']}','{$_POST['nik']}',
+'{$_POST['nama_lengkap']}','{$_POST['jenis_kelamin']}',
+'{$_POST['ttl']}','{$_POST['agama']}','{$_POST['alamat_rumah']}',
+'{$_POST['tempat_tinggal']}','{$_POST['mode_transportasi']}', 
+'{$_POST['nama_ayah']}','{$_POST['nama_ibu']}','{$_POST['no_telp']}',
+'{$_POST['no_kps']}','{$_POST['tahun_lahir_ayah']}',
+'{$_POST['tahun_lahir_ibu']}', '{$_POST['pendidikan_ayah']}',
+'{$_POST['pendidikan_ibu']}','{$_POST['pekerjaan_ayah']}',
+'{$_POST['pekerjaan_ibu']}','{$_POST['penghasilan_ayah']}',
+'{$_POST['penghasilan_ibu']}','{$_POST['keterangan_ayah']}',
+'{$_POST['keterangan_ibu']}','{$_POST['tinggi_berat_badan']}',
+'{$_POST['jarak_tempuh']}','{$_POST['waktu_tempuh']}','{$_POST['anak_ke']}', 
+'{$_POST['jumlah_total_saudara']}','{$_POST['jumlah_adik']}',
+'{$_POST['jumlah_kakak']}','{$_POST['nama_dokumen']}','{$_POST['username']}',
+'{$_POST['password']}', '{$_POST['status_pendaftaran']}','{$_POST['tgl']}')");
+  
+            
+  mysqli_query($koneksi,$query);
+  header("location:../pendaftaran.php?pesan=input");
+
+}
+
+
+
+
+
+
+  ?>
